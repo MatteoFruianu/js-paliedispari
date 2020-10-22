@@ -3,37 +3,39 @@
 // Creare una funzione per invertire i caratteri di una stringa.
 // Capire se la parola inserita è palindroma
 
+
+
 //chiedo all'utente di inserire una parola
 
-var parolaUtente = prompt("inserire una parola").toLowerCase();
+// var parolaUtente = prompt("inserire una parola").toLowerCase();
 
-// creo una funzione if else con la comparazione della parola data dall'utente e la parola letta al contrario
+// // creo una funzione if else con la comparazione della parola data dall'utente e la parola letta al contrario
 
-if (parolaUtente === reverseWord(parolaUtente)) {
-    console.log("La parola è palindroma")
-} else {
-    console.log("La parola non è palindroma")
-}
+// if (parolaUtente === reverseWord(parolaUtente)) {
+//     console.log("La parola è palindroma")
+// } else {
+//     console.log("La parola non è palindroma")
+// }
 
-// creo la funzione per invertire la parola
+// // creo la funzione per invertire la parola
 
-function reverseWord(word) {
+// function reverseWord(word) {
 
-var splitWord = word.split("");
+// var splitWord = word.split("");
 
-splitWord;
+// splitWord;
 
-var reverser = splitWord.reverse();
+// var reverser = splitWord.reverse();
 
-reverser;
+// reverser;
 
-var joinReverse = reverser.join("");
+// var joinReverse = reverser.join("");
 
-joinReverse;
+// joinReverse;
 
-return joinReverse;
+// return joinReverse;
 
-}
+// }
 
 
 
@@ -45,9 +47,53 @@ return joinReverse;
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto in base alla scelta pario o dispari fatta all'inizio dall'utente.
-// Consigli del giorno
-// 1. Scriviamo sempre in italiano i passaggi che vogliamo fare
-// 2. Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
+
+
+// chiedo all'utente se sceglie pari o dispari
+
+var pariDispari = prompt("Pari o dispari?").toLowerCase();
+
+// faccio scegliere all'utente un numero da 1 a 5
+
+var numeroUtente = parseInt( prompt("Scegli un numero da 1 a 5") );
+console.log("L'utente ha scelto il numero: " + numeroUtente);
+
+// in base alla funzione creata faccio scegliere un numero random al pc da 1 a 5
+
+var numeroComputer = randomComputer(1,5);
+
+console.log("Il computer ha scelto il numero: " + numeroComputer);
+
+// sommo il valore utente e il valore pc
+
+var sommaTotale = numeroUtente + numeroComputer;
+console.log("La somma totale è " + sommaTotale);
+
+console.log("L'utente ha scelto: " + pariDispari)
+
+// richiamando la funzione verdetto stabilisco chi vince con if/else
+
+if (verdetto(sommaTotale) === pariDispari) {
+    console.log("L'utente ha vinto")
+} else {
+    console.log("Ha vinto il computer");
+}
+
+function verdetto (num) {
+    if (num % 2 === 0) {
+        return "pari"
+    }
+
+    return "dispari"
+}
+
+
+
+function randomComputer(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+
 
 
 
